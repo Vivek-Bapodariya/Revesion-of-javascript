@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h2>Coading</h2>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    
+</body>
+<script>
+    let intervalId;
+    const dateChangeStart = function(){
+        // intervalId = setInterval(sayDate, 1000, "hi")
+        if (!intervalId) {
+            intervalId = setInterval(sayDate, 1000, "hi")    
+        }
+        
+    }
+
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    
+    const dateChangeStop = function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+    
+    
+
+    clearInterval(intervalId)
+
+    document.querySelector('#start').addEventListener('click', dateChangeStart);
+    document.querySelector('#stop').addEventListener('click', dateChangeStop);
+</script>
+</html>
